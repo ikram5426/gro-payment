@@ -1,0 +1,38 @@
+image: amazonlinux:latest
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Installation,Build and Deploy Premium-Staging on K8S
+          services:
+            - docker
+          caches:
+            - docker
+          script:
+            - yum update
+            - yum install -y python3-pip
+            - pip3 install awscli
+            - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
+            - chmod +x ./kubectl
+            - mv ./kubectl /usr/local/bin/kubectl
+          # Mashhoud Code for Pipeline
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            - aws configure set default.region us-east-1
+            - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471668196012.dkr.ecr.us-east-1.amazonaws.com
+            - docker build -t premium .
+            - docker tag premium:latest 471668196012.dkr.ecr.us-east-1.amazonaws.com/premium:latest
+            - docker push 471668196012.dkr.ecr.us-east-1.amazonaws.com/premium:latest
+          # Setting up Kubernetes configurations
+            - mkdir -p ~/.kube
+            - cp -i kube-config ~/.kube/config
+            - chown $(id -u):$(id -g) ~/.kube/config
+            - kubectl config set-context k8s.gro-technologies.com --cluster=k8s.gro-technologies.com --user=k8s.gro-technologies.com
+            - kubectl config use-context k8s.gro-technologies.com
+            - kubectl rollout restart deployment/gro-premium
+
+definitions:
+  services:
+    docker:
+      memory: 3072  # Adjust the memory limit as needed

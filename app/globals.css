@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Sofiapro";
+  src: url("/fonts/sofiapro-medium.woff") format("woff"),
+    url("/fonts/sofiapro-medium.woff2")format("woff2"),
+    url("/fonts/sofiapro-medium.otf") format("opentype")
+    url("/fonts/sofiapro-regular.woff2")format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofiapro";
+  src: url("/fonts/sofiapro-regular.otf") format("opentype"),
+    url("/fonts/sofiapro-regular.woff") format("woff"),
+    url("/fonts/sofiapro-regular.woff2") format("woff2"),
+    url("/fonts/sofiapro-regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofiapro";
+  src: url("/fonts/sofiapro-semibold.otf") format("opentype"),
+    url("/fonts/sofiapro-semibold.woff") format("woff"),
+    url("/fonts/sofiapro-semibold.woff2") format("woff2"),
+    url("/fonts/sofiapro-semibold.otf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+h1{
+  font-size: 2.97vw
+}
+@media screen and (max-width: 640px) {
+h1{
+font-size: 7.47vw
+}}
+
+
+.uGraybg {
+  @apply bg-[#f5f5f5];
+}
+
+.titlePT{
+@apply sm:mt-[2.96vw] mt-[2vw]
+}
+
+body {
+ background-color: #f5f5f5;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-text {
+  animation: fadeIn 1s ease-in;
+}
+
+.magnifyglass-container {
+  width: 0.9765625vw;
+  height: auto;
+}
+
+.logoimg-container {
+  width: 0.9765625vw;
+}
+.barcode-container {
+  width:10.0390625vw;
+}
+
+
+   .image {
+    object-fit: contain;
+    width: 42px !important;
+    height: 27px !important;
+    position: relative !important;
+    height: unset !important;   
+  }
+  .image-explanation {
+    object-fit: contain;
+    width: 74px !important;
+    height: 50px !important;
+    position: relative !important;
+    margin-top: 10px;
+  }
+  .image-credit-card {
+    object-fit: contain;
+    width: 100% !important;
+    height: 100% !important;
+    position: relative ;
+    height: unset !important;
+  }
+
+  @media (max-height: 500px) {
+    .bottom-section {
+      position: relative;
+    }
+  };
+  input {
+    font-size: 16px; 
+    transform: scale(0.8);
+    touch-action: manipulation;
+  }
+  /* Mobile Styling  */
+@keyframes pulse {
+  50% {
+    opacity: .25;
+  }
+}
+.animate-pulse {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+};
+
+input:-webkit-autofill {
+  color: white !important;
+}
+.modal {
+  animation: modal-fade-in-out 0.5s ease-in-out;
+}
+
+.modal-is-open {
+  opacity: 1;
+}
+
+@keyframes modal-fade-in-out {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.modal {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.modal-is-open {
+  opacity: 1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: all 5000s ease-in-out 0s;
+    transition-property: background-color, color;
+}

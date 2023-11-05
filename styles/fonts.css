@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Sofiapro";
+  src: url("/fonts/sofiapro-medium.woff") format("woff"),
+    url("/fonts/sofiapro-medium.woff2")format("woff2"),
+    url("/fonts/sofiapro-medium.otf") format("opentype")
+    url("/fonts/sofiapro-regular.woff2")format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofiapro";
+  src: url("/fonts/sofiapro-regular.otf") format("opentype"),
+    url("/fonts/sofiapro-regular.woff") format("woff"),
+    url("/fonts/sofiapro-regular.woff2") format("woff2"),
+    url("/fonts/sofiapro-regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofiapro";
+  src: url("/fonts/sofiapro-semibold.otf") format("opentype"),
+    url("/fonts/sofiapro-semibold.woff") format("woff"),
+    url("/fonts/sofiapro-semibold.woff2") format("woff2"),
+    url("/fonts/sofiapro-semibold.otf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
