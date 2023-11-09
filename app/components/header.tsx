@@ -26,13 +26,13 @@ const Header = () => {
             className={`sm:hidden flex items-center justify-between my-[5.4vw]`}
           >
             <div
-              className={` w-[42px] h-[27px] flex items-center mx-[auto]`}
+              className={` w-[42px] h-[27px] flex items-center mx-[auto] `}
             >
               <Link href="/">
                 <Image
                   src="/Premium.png"
                   priority
-                  className="image z-30"
+                  className="image z-30  fixed"
                   fill={true}
                   alt="logo"
                 />

@@ -318,8 +318,7 @@ const GoPremium = () => {
               )}
               {step === 2 && (
                 <div className="my-[0px] mt-[2.65625vw] shadow-sm rounded-[5.34vw] bg-[#fff] h-[12.54vw] sm:h-[3.421875vw] mx-auto flex items-center border-solid border-[1px]  px-[.78125vw]">
-                  <input
-                   className={`${inputStyles.base} ${inputStyles.placeholder}`}
+                  <input className={`${inputStyles.base} ${inputStyles.placeholder}`}
                     ref={cardNumberInputRef}
                     type="tel"
                     placeholder="Card number"
